@@ -1,0 +1,37 @@
+[
+  {
+    "kingdom_id": 1,
+    "kingdom_name": "Bacteria",
+    "update_date": "2014-08-20"
+  },
+  {
+    "kingdom_id": 2,
+    "kingdom_name": "Protozoa",
+    "update_date": "2004-06-04"
+  },
+  {
+    "kingdom_id": 3,
+    "kingdom_name": "Plantae",
+    "update_date": "1996-03-26"
+  },
+  {
+    "kingdom_id": 4,
+    "kingdom_name": "Fungi",
+    "update_date": "1996-03-26"
+  },
+  {
+    "kingdom_id": 5,
+    "kingdom_name": "Animalia",
+    "update_date": "1996-03-26"
+  },
+  {
+    "kingdom_id": 6,
+    "kingdom_name": "Chromista",
+    "update_date": "2004-06-04"
+  },
+  {
+    "kingdom_id": 7,
+    "kingdom_name": "Archaea",
+    "update_date": "2014-08-20"
+  }
+]

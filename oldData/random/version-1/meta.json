@@ -1,0 +1,8 @@
+{
+  "date":1587214524610,
+  "nodeCount":10000,
+  "linkCount":19800,
+  "nodeFile":"labels.json",
+  "linkFile":"links.bin",
+  "version":"1.0.2"
+}
