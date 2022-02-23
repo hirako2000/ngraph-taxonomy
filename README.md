@@ -2,6 +2,8 @@
 
 This repository uses ngraph.three to display a galaxy-like view of half a million organisms linked as per their Taxonomy definition.
 
+[demo](https://hirako-graph.surge.sh)
+
 ## local development
 
 ```bash
@@ -11,7 +13,7 @@ npm install
 npm run start
 ```
 
-on a separate terminal tab:
+In separate terminal tab:
 
 ```bash
 cd static-server
@@ -28,6 +30,12 @@ Local DB
 - The src data is a mysql dump of a large species data set with taxonomy information.
 - The db is converted into CSV for parsing with a node script.
 - The node script generates ngraph binaries with 250 iterations.
+
+| Data source | format | download |
+| ------------- | ------------- | ------------- |
+| taxonomy db dump (ITIS) | sql | [download](https://bafybeiavhwlsqmbibpaubnuu5izioievk3qw3w5eums5tso3otvnyu5jdi.ipfs.dweb.link/) |
+| taxonomy json | json | [download](https://bafybeidkxfh6exlaznrckbof6yd4l5qvrxokeqwffhr25q3k4h32my445m.ipfs.dweb.link/) |
+| taxonomy plain text | csv | [download](https://bafybeigfkgeepjmmwigwo2oxao7g2pycacytutkeotcsvvugyl2ihx2ugu.ipfs.dweb.link/) |
 
 ### Generate
 
