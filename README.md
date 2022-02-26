@@ -111,7 +111,7 @@ content:
 }
 ```
 
-This repo has ships with a script to launch a simple nodejs [http-server](https://www.npmjs.com/package/http-server).
+This repo ships with a script to launch a simple nodejs [http-server](https://www.npmjs.com/package/http-server).
 Which you can start with this command:
 
 ```bash
