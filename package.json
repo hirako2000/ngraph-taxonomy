@@ -1,36 +1,36 @@
 {
-  "name": "pmviz",
-  "version": "1.0.0",
-  "description": "Visualization of common package managers",
+  "name": "ngraph-taxonomy",
+  "version": "0.1.1",
+  "description": "Visualization of species",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mkdir -p ./build && cp ./src/index.html ./build/ && webpack -p --config webpack.production.config.js",
+    "compute-ngraph": "node generate-taxonomy-ngraph.js",
+    "compute-npraph-remote": "node generate-taxonomy-ngraph-remote.js",
+    "http-server": "http-server --cors -p 9091 -o example-data",
+    "build": "mkdir -p ./static-server && cp ./src/index.html ./static-server/ && cp -r threats ./static-server/ && cp -r nature ./static-server/ && webpack -p --config webpack.production.config.js",
     "start": "PORT=8081 node dev-server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anvaka/pm.git"
+    "url": "https://github.com/hirako2000/ngraph-taxonomy.git"
   },
   "keywords": [
     "ngraph",
     "visualization",
-    "package",
-    "managers",
-    "npm",
-    "bower",
-    "cpan",
-    "composer",
-    "go"
+    "three.js",
+    "taxonomy",
+    "data"
   ],
-  "author": "Andrei Kashcha",
+  "author": "Hirako San",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anvaka/pm/issues"
+    "url": "https://github.com/hirako2000/ngraph-taxonomy/issues"
   },
-  "homepage": "https://github.com/anvaka/pm",
+  "homepage": "https://github.com/hirako2000/ngraph-taxonomy",
   "devDependencies": {
     "express": "^4.12.3",
+    "http-server": "^14.1.0",
     "ngraph.generators": "0.0.15",
     "react-hot-loader": "^1.2.7",
     "webpack-dev-server": "^1.9.0"

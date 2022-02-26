@@ -1,3 +1,3 @@
 export default {
-  dataUrl: 'https://hirako-ngraph.surge.sh/'
+  dataUrl: 'http://localhost:9091/'
 };

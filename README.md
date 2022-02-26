@@ -7,7 +7,7 @@ This repository uses ngraph.three to display a galaxy-like view of half a millio
 ## local development
 
 ```bash
-git clone https://github.com/hirako2000/ngraph-taxonomy
+git clone https://github.com/hirako2000/ngraph-taxonomy.git
 cd ngraph-taxonomy
 npm install
 npm run start
@@ -16,11 +16,10 @@ npm run start
 In separate terminal tab:
 
 ```bash
-cd static-server
-http-server --cors -p 9090
+npm run build && npm run http-server
 ```
 
-This will start local development sever with auto-rebuild.
+This will start local development server with auto-rebuild.
 
 ## Generating the Taxonomy graph binaries and metadata (Local db)
 
@@ -40,15 +39,16 @@ Local DB
 ### Generate
 
 ```bash
-node genNature.js # this will take a couple of mins to parse the data, 
+node generate-taxonomy-ngraph.js # this will take a couple of mins to parse the data, 
 # then takes a good half an hour for graph iterations
 ```
 
 ## Generating the Taxonomy graph binaries and metadata (Remote calls)
 
-Remote calls. Good luck with the frequent random ECONNRESET. Use local approach preferably.
+Remote calls. Good luck with the frequent random ECONNRESET. Use local approach, preferably.
 
 ### Data source and processing
+
 - The src data is a remote server API containing a large species data set with taxonomy information.
 - The relevant pieces are fetched with dynamic parsing with a node script.
 - The node script generates ngraph binaries with 250 iterations.
@@ -56,7 +56,7 @@ Remote calls. Good luck with the frequent random ECONNRESET. Use local approach 
 ### Generate
 
 ```bash
-node genNature.js # this will take a couple of mins to parse the data, 
+node generate-taxonomy-ngraph-remote.js # this will take a couple of mins to parse the data, 
 # then takes a good half an hour for graph iterations
 ```
 
@@ -94,7 +94,7 @@ The folder structure should look like this:
 ```
 .
 └── static-server  /*  A separate static server to feed data */
-    └── my-graph
+      └── nature 
         ├── manifest.json
         └── version-1
             ├── labels.json         /* this file is produced by ngraph.tobinary */
@@ -112,18 +112,19 @@ content:
 }
 ```
 
-Inside `static-server` we launch a web server. One can use a simple nodejs [http-server](https://www.npmjs.com/package/http-server). Once it is installed globally (`npm i http-server -g`), you can launch it like this:
+This repo has ships with a script to launch a simple nodejs [http-server](https://www.npmjs.com/package/http-server).
+Which you can start with this command:
 
 ```bash
-http-server --cors -p 9090
+npm run http-server
 ```
 
-This will start a local data server at `http://127.0.0.1:9090/`
+This will start a local data server at `http://localhost:9091/`
 
 Update the [config.js](https://github.com/hirako2000/ngraph-taxonomy/master/src/config.js) in
 this repository to point to your data server, and your graph should be accessible at
 
-http://127.0.0.1:8081/#/galaxy/my-graph
+http://localhost:8081/#/galaxy/my-graph
 
 
 # The cyber threat visualization

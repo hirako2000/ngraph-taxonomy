@@ -1,7 +1,5 @@
 #!/bin/sh
-rm -rf build
+rm -rf static-server
 npm run build
-cp -r nature build/
-cp -r threats build/
-cd ./build
+cd ./static-server
 surge . hirako-ngraph.surge.sh

@@ -52,7 +52,7 @@ function buildSpecies(species) {
 }
 
 const pipeline = chain([
-  fs.createReadStream('taxa.json'),
+  fs.createReadStream('./data/taxa.json'),
   parser(),
   streamArray(),
   ignore({filter: /\b_meta\b/i}),
@@ -213,7 +213,7 @@ pipeline.on('end', () => {
 function graphStuff() {
   const layout = createLayout(g, {
     iterations: 250, // Run `100` iterations only
-    saveEach: 3000, // Save each `nth` iteration
+    saveEach: 50, // Save each `nth` iteration
     outDir: './nature3', // Save results into a folder in `./`
     layout: require('ngraph.forcelayout3d'), // use custom layouter
   });
