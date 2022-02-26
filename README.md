@@ -56,8 +56,7 @@ Remote calls. Good luck with the frequent random ECONNRESET. Use local approach,
 ### Generate
 
 ```bash
-node generate-taxonomy-ngraph-remote.js # this will take a couple of mins to parse the data, 
-# then takes a good half an hour for graph iterations
+node generate-taxonomy-ngraph-remote.js
 ```
 
 # Your own graphs
@@ -121,10 +120,9 @@ npm run http-server
 
 This will start a local data server at `http://localhost:9091/`
 
-Update the [config.js](https://github.com/hirako2000/ngraph-taxonomy/master/src/config.js) in
-this repository to point to your data server, and your graph should be accessible at
+Update the [config.js](https://github.com/hirako2000/ngraph-taxonomy/master/src/config.js) if needed to point to your data server, and your graph(s) should be accessible at
 
-http://localhost:8081/#/galaxy/my-graph
+http://localhost:8081/
 
 
 # The cyber threat visualization
@@ -136,3 +134,10 @@ This is a far simpler graph, which I'm experimenting with to develop a threat ac
 ```bash
 node genThreatsGraph.js
 ```
+
+# TODO
+- Document steps to deal with labels and links files
+- Migrate away from old version of webpack
+- Handle static data serving in a single server for development
+- Document how to generate threat actors data
+- Increase data collection to build entire known tree of life (millions/billion of organisms)
